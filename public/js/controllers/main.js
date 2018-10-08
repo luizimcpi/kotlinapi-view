@@ -20,7 +20,6 @@ angular.module('meus-contatos')
         buscarTodos();
 
         $scope.salvar = function () {
-            console.log("COMO ESTA O ID AQUI " + $scope.contato.id)
             $scope.contato.id > 0 ? atualizar() : novo();
         };
 
@@ -57,7 +56,7 @@ angular.module('meus-contatos')
         };
 
         $scope.remove = function (contato) {
-console.log('aquii na rmoção '+ contato)
+
             if (confirm('Você têm certeza que deseja excluir?')) {
                 contatoService.delete({params: contato.id},
                     function () {
